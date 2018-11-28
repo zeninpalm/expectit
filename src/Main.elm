@@ -16,6 +16,11 @@ main =
         , view = view
         , update = update
         , subscriptions = always Sub.none
+        {-- Wrap Url like this:
+        MsgForRouter ( Router.Types.OnUrlChange url )
+        So every URL change will become a parameter to be passed to 'update' function
+        And we will handle the change in 'update' function
+        --}
         , onUrlChange = MsgForRouter << Router.Types.OnUrlChange
         , onUrlRequest = MsgForRouter << Router.Types.OnUrlRequest
         }
