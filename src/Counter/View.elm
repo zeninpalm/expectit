@@ -12,5 +12,5 @@ view : Model -> Html Msg
 view model =
     div []
         [
-            button [onClick (MsgForCounter Increment)] [text "+"]
+            button [onClick (MsgForCounter Increment)] [text "+", text (String.fromInt model)]
         ]
